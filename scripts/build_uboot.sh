@@ -19,5 +19,5 @@ dtc -Idts -Odtb -o $UBT_OUT/$DT_FILE $K_SRC/arch/arm64/boot/dts/${BOARD_FAMILY}-
 # 融合dtb到uboot
 $UBT_SRC/tools/boot0img -s $PREBUILT/scp.bin -d $PREBUILT/bl31.bin -u $UBOOT_ORIG -e -F $UBT_OUT/$DT_FILE -o $UBT_OUT/u-boot-with-dtb.bin
 
-echo "成功构建uboot"
+echo "===========================成功构建uboot==========================="
 touch $OUTPUT/.flag_build_uboot_complete

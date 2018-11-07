@@ -3,7 +3,7 @@ set -e
 
 [ -f $OUTPUT/.flag_build_image_complete ] && exit
 
-echo "构建系统镜像"
+echo "===========================构建系统镜像==========================="
 # 点
 boot0_position=8      # KiB boot0位置
 uboot_position=19096  # KiB uboot位置
@@ -104,5 +104,5 @@ mv $DISK_HEAD $OUTPUT/${PLATFORM}.img
 cat $OUTPUT/${PLATFORM}.img | md5sum > $OUTPUT/${PLATFORM}.img.md5sum
 rm -rf $IMGOUT
 
-echo "成功构建系统镜像"
+echo "===========================成功构建系统镜像==========================="
 touch $OUTPUT/.flag_build_image_complete

@@ -54,12 +54,12 @@ apt_install qemu-system-arm
 #apt_install kernel-package
 #########################
 
-echo "构建完整img镜像"
+echo "===========================构建完整img镜像==========================="
 
 $BASEDIR/scripts/build_uboot.sh
 $BASEDIR/scripts/build_kernel.sh
 $BASEDIR/scripts/build_rootfs.sh
 $BASEDIR/scripts/build_image.sh
 
-echo "done."
+echo "===========================DONE.==========================="
 

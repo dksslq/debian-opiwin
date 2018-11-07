@@ -96,7 +96,9 @@ cp -fa $PREBUILT/asound.state "$ROOTFS/var/lib/alsa/asound.state"
 # 安装 模块 头文件 配置
 cp -rfa $K_OUT/lib $ROOTFS
 cp -rfa $K_OUT/usr $ROOTFS
-cp -rfa $K_OUT/etc $ROOTFS
+
+# 安装etc配置
+cp -rfa $PREBUILT/etc $ROOTFS
 
 # resolv.conf
 cp -fa /etc/resolv.conf $ROOTFS/etc/resolv.conf
@@ -104,7 +106,7 @@ cp -fa /etc/resolv.conf $ROOTFS/etc/resolv.conf
 #######chroot do#########
 LOCALE_LANG="en_US.UTF-8 UTF-8"
 #LOCALE_LANG="zh_CN.UTF-8 UTF-8"
-EXTRAPKG="dosfstools curl xz-utils iw rfkill wpasupplicant openssh-server alsa-utils vim sudo"
+EXTRAPKG="dosfstools curl xz-utils iw rfkill wpasupplicant openssh-server bluez alsa-utils vim sudo"
 cat > "$ROOTFS/do.sh" <<EOF
 #!/bin/dash
 set -e
@@ -139,7 +141,7 @@ systemctl enable ssh
 EOF
 
 chmod +x "$ROOTFS/do.sh"
-echo "chroot进入$ROOTFS"
+echo "===========================chroot进入$ROOTFS==========================="
 chroot $ROOTFS /do.sh
 rm -f "$ROOTFS/do.sh"
 #########################
@@ -148,5 +150,5 @@ rm -f "$ROOTFS/do.sh"
 rm -f $ROOTFS/usr/bin/$QEMULATOR
 umount $ROOTFS/dev/pts > /dev/null 2>&1
 
-echo "成功构建根文件系统"
+echo "===========================成功构建根文件系统==========================="
 touch $BASEDIR/output/.flag_build_rootfs_complete
