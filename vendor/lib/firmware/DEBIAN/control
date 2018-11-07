@@ -1,0 +1,9 @@
+Package: armbian-firmware
+Version: 5.59.180828
+Architecture: all
+Maintainer: Igor Pecovnik <igor.pecovnik@****l.com>
+Installed-Size: 1
+Replaces: linux-firmware, firmware-brcm80211, firmware-samsung, firmware-realtek, armbian-firmware-full
+Section: kernel
+Priority: optional
+Description: Linux firmware
