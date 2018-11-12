@@ -97,8 +97,9 @@ cp -fa $PREBUILT/asound.state "$ROOTFS/var/lib/alsa/asound.state"
 cp -rfa $K_OUT/lib $ROOTFS
 cp -rfa $K_OUT/usr $ROOTFS
 
-# 安装etc配置
+# 安装etc配置 库
 cp -rfa $PREBUILT/etc $ROOTFS
+cp -rfa $PREBUILT/lib $ROOTFS
 
 # resolv.conf
 cp -fa /etc/resolv.conf $ROOTFS/etc/resolv.conf
