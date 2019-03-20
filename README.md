@@ -1,4 +1,4 @@
-## Orangepi win debian系统镜像构建脚本 支持winplus
+## Orangepi win/winplus debian系统镜像构建脚本
 
 ## Usage:
 
